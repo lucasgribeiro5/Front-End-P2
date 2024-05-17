@@ -1,29 +1,40 @@
-# Loja WebShop
+# Universidade de Marília (UNIMAR)
 
-This template should help get you started developing with Vue 3 in Vite.
+Análise e Desenvolvimento de Sistemas (ADS) - 3° Termo B
 
-## Recommended IDE Setup
+# INTEGRANTES
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Higor Miguel Pavim Lopes - 1971780
 
-## Customize configuration
+João Victor Marques Seixas - 1974858
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Josué Miguel Ramos De Souza - 1976990
 
-## Project Setup
+Lucas Garcia Ribeiro - 1971977
 
-```sh
-npm install
-```
+Lucas Eduardo Magalhães Hirayama - 1972048
 
-### Compile and Hot-Reload for Development
+# Descrição do projeto
 
-```sh
-npm run dev
-```
+O projeto escolhido pelo grupo escolhido na matéria de Fabrica de Projetos, foi fazer uma loja E-commerce, tendo como foco na tela de "Fale Conosco", para resolver a dor dessa empresa.
 
-### Compile and Minify for Production
+# Prints - Tela Inicial 
 
-```sh
-npm run build
-```
+![Tela 1](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/368dbe14-55fe-43b2-8383-10b6129a5fe2)
+
+![Tela 2](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/56106fd7-e8c9-44d8-b8fd-c7d0494fbd5f)
+
+![Tela 3](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/05367095-5dc9-4122-84dc-64b0a7ee106c)
+
+
+# Carrinho
+
+![Carrinho 1](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/4130a694-cf03-42fb-9c1a-8621898a5fd6)
+
+![Carrinho 2](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/6d5d75a1-277d-4a99-93ec-066fb895b441)
+
+# Fale Conosco
+
+![Fale Conosco 1](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/adaaf084-5592-4de5-8b5c-296b193aafec)
+
+![Fale Conosco 2](https://github.com/lucasgribeiro5/Front-End-P2/assets/127799897/ad6302c4-e9ae-4792-a8db-01f6fa47c9bb)
