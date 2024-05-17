@@ -66,7 +66,7 @@
               <router-link to="/carrinho" style="text-decoration: none;" class="category-link"> Carrinho </router-link>
             </div>
             <div class="carrinho display-flex align-items-center gap-8">
-              <router-link to="/" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
+              <router-link to="/FormularioContato" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
             </div>
           </div>
         </div>

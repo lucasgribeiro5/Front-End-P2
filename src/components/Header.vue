@@ -91,7 +91,7 @@
                 </g>
               </g>
             </svg> -->
-            <router-link to="/" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
+            <router-link to="/FormularioContato" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
           </div>
         </div>
       </div>
@@ -107,11 +107,11 @@
       <a href="/" class="category-link">Eletroportáteis</a>
     </div>
   </nav>
-  <div class="banner pt-32">
+  <!-- <div class="banner pt-32">
     <div class="container">
       <img src="../assets/images/Banner.png" alt="Banner" />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>

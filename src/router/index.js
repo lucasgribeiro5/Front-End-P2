@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CarrinhoView from "../views/CarrinhoView.vue";
+import FormularioContato from "../views/FormularioContrato.vue";
 
 
 const router = createRouter({
@@ -16,11 +17,11 @@ const router = createRouter({
       name: "carrinho",
       component: CarrinhoView,
     },
-    // {
-    //   path: "/FaleConosco",
-    //   name: "Fale",
-    //   component: Faleconosco,
-    // },
+    {
+      path: "/FormularioContato",
+      name: "Fale",
+      component: FormularioContato,
+    },
   ],
 });
 

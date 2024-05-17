@@ -1,4 +1,9 @@
 <template>
+  <div class="banner pt-32">
+    <div class="container">
+      <img src="../assets/images/Banner.png" alt="Banner" />
+    </div>
+  </div>
   <div class="diferenciais pt-24 pb-64">
     <div class="container">
       <div

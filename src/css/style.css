@@ -27,10 +27,6 @@ h3 {
   font-weight: bold;
 }
 
-*::selection {
-  background-color: #14b0c8;
-}
-
 .container {
   max-width: 1200px;
   width: 1200px;
@@ -300,4 +296,144 @@ p.total {
 .A{
   outline: none;
   text-decoration: none;
+}
+
+.error {
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.accordion-container {
+  margin: 5px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+button.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.banner {
+  object-fit: cover;
+}
+
+.introduce {
+  height: 540px;
+  background: url("../assets/images/Faleconosco.png.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.introduce {
+  height: 540px;
+  background: url("../assets/images/Faleconosco.png.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.introduce .container {
+  padding-top: 100px;
+}
+
+.introduce h1 {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.introduce p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.introduce a.btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #14b0c8;
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.introduce a.btn:hover {
+  transform: scale(1.1);
+  background-color: #0888d8;
+}
+
+#form {
+  margin-top: 30px;
+}
+
+#form h2 {
+  font-size: 24px;
+  color: #14b0c8;
+}
+
+#form input[type="text"],
+#form textarea {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  color: black;
+}
+
+#form button[type="submit"] {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #14b0c8;
+  border: none;
+}
+
+#form button[type="submit"]:hover {
+  background-color: #0888d8;
+  border: none;
+}
+
+.accordion {
+  margin-top: 30px; 
+}
+
+.accordion h2 {
+  font-size: 24px;
+  color: #14b0c8;
+}
+
+.accordion hr {
+  border-top: 2px solid #14b0c8;
+}
+
+.accordion-body {
+  color: black;
+}
+
+.accordion-container {
+  margin: 5px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+button.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.verdes{
+  color: #14b0c8;
+}
+
+.titulo-personalizado {
+  color: #14b0c8 !important; /* Escolha a cor que desejar */
+}
+
+.hidden-line {
+  display: none;
+}
+
+.nomes{
+  font-size: 16px;
 }

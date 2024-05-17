@@ -11,7 +11,7 @@
             height="120px"
             style="margin-bottom: 50px;"  
           />
-          <a href="/"><b>Celulares</b></a>
+          <a href="/" class="nomes"><b>Celulares</b></a>
         </div>
         <div>
           <img
@@ -21,7 +21,7 @@
             height="120px"
             style="margin-bottom: 50px;"  
           />
-          <a href="/"><b>Informática</b></a>
+          <a href="/" class="nomes"><b>Informática</b></a>
         </div>
         <div>
           <img
@@ -31,7 +31,7 @@
             height="120px"
             style=" margin-bottom: 50px; margin-left: 10px; justify-content: center; align-items: center; text-align: center;"  
           />
-          <a href="/"><b>Eletrônicos</b></a>
+          <a href="/" class="nomes"><b>Eletrônicos</b></a>
         </div>
         <div>
           <img
@@ -41,7 +41,7 @@
             height="120px"
             style="margin-bottom: 50px;"  
           />
-          <a href="/"><b>Eletrodomésticos</b></a>
+          <a href="/" class="nomes"><b>Eletrodomésticos</b></a>
         </div>
         <div>
           <img
@@ -51,7 +51,7 @@
             height="120px"
             style="margin-bottom: 50px; margin-left: 15px"  
           />
-          <a href="/"><b>Eletroportáteis</b></a>
+          <a href="/" class="nomes"><b>Eletroportáteis</b></a>
         </div>
       </div>
     </div>
