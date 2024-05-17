@@ -19,7 +19,7 @@
           <div class="detalhes">
             <p class="nome-produto">Iphone 15 Pro Max 1TB</p>
             <p class="categoria">Eletrônico - Celulares</p>
-            <p class="preco">R$ 15.400,00</p>
+            <p class="preco">R$ 11.759,66</p>
             <button class="no-carrinho">Adicionado</button>
           </div>
         </div>
