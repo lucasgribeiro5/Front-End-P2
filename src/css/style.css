@@ -1,0 +1,303 @@
+@import url("flex.css");
+@import url("reset.css");
+@import url("utils.css");
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+*::selection {
+  background-color: #14b0c8;
+}
+
+.container {
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1;
+}
+
+.header {
+  background-color: #060707;
+  border-bottom: 1px solid #a4a4a430;
+  height: 100px;
+}
+
+.header .logo {
+  right: 15%;
+  top: 5px;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header svg {
+  width: 25px;
+}
+
+svg {
+  fill: #14b0c8;
+}
+
+nav {
+  background-color: #060707;
+  border-bottom: 5px solid #14b0c8;
+  text-decoration: none;
+}
+
+nav a {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+.banner img {
+  border-radius: 24px;
+}
+
+.diferenciais svg {
+  width: 32px;
+}
+
+.diferenciais .item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #393939;
+}
+
+.diferenciais .item h6 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.diferenciais .item p {
+  font-size: 12px;
+}
+
+.produto .detalhes {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detalhes .nome-produto {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.detalhes .preco {
+  font-size: 24px;
+  color: #14b0c8;
+  font-weight: bold;
+}
+
+.detalhes button {
+  font-weight: bold;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.produto .detalhes button.carrinho {
+  background: #14b0c8;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 22px;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  margin-top: 10px;
+}
+
+.produto .detalhes button.carrinho:hover {
+  transform: scale(1.1);
+  background-color: #0888d8;
+}
+
+.produto .detalhes button.carrinho:not(:hover) {
+  transform: scale(1);
+  color: #fff;
+}
+
+.produto .detalhes button.no-carrinho {
+  background-color: #bce1da;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 8px;
+  color: #72b6a6;
+  border: none;
+}
+
+.newsletter {
+  background-color: #060707;
+}
+
+.newsletter .titulo {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.newsletter input {
+  height: 45px;
+  background-color: #f4f4f4;
+  color: #060707;
+  font-weight: 500;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.775rem;
+  margin: 2px;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.newsletter input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px #14b0c8;
+}
+
+
+.newsletter button {
+  font-weight: bold;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #14b0c8;
+  border: none;
+  border-radius: 12px;
+  line-height: 15px;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.newsletter button:hover {
+  transform: scale(1.1);
+  background-color: #0888d8;
+}
+
+.lista-produtos-carrinho {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #f3f3f3;
+}
+
+.produtos-carrinho button {
+  font-weight: bold;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #b22a2a;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.produtos-carrinho button svg {
+  fill: transparent;
+}
+
+p.total {
+  font-weight: bold;
+  text-align: right;
+  font-size: 20px;
+}
+
+.category-link {
+  position: relative;
+  color: white;
+}
+
+.category-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: 90%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  margin-top: 2px;
+  border-radius: 12px;
+  background-color: #14b0c8;
+  transition: width 0.3s;
+}
+
+.category-link:hover::before {
+  width: 100%;
+}
+
+.category-link:hover {
+  color: white;
+}
+
+.produtos h3 {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.ver-mais {
+  color: #14b0c8;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b4b2b2;
+  border-radius: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.A{
+  outline: none;
+  text-decoration: none;
+}
