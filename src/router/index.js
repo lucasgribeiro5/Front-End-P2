@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CarrinhoView from "../views/CarrinhoView.vue";
 import FormularioContato from "../views/FormularioContrato.vue";
+import Login from "../views/Login.vue";
+import Cadastro from "../views/Cadastro.vue";
 
 
 const router = createRouter({
@@ -21,6 +23,16 @@ const router = createRouter({
       path: "/FormularioContato",
       name: "Fale",
       component: FormularioContato,
+    },
+    {
+      path: "/Login",
+      name: "Login",
+      component: Login,
+    },
+    {
+      path: "/Cadastro",
+      name: "Cadastro",
+      component: Cadastro,
     },
   ],
 });

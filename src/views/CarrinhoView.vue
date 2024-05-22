@@ -26,7 +26,7 @@
                   </g>
                 </g>
               </svg>
-              <a href="/" style="text-decoration: none;" class="category-link">Entrar/Cadastrar</a>
+              <a href="/login" style="text-decoration: none;" class="category-link">Entrar/Cadastrar</a>
             </div>
             <div class="carrinho display-flex align-items-center gap-8">
               <svg
