@@ -172,7 +172,7 @@ form {
   border: none;
   cursor: pointer;
   font-size: 14px;
-  color: #0674B8;
+  color: #18b3cb;
   position: absolute;
   top: 50%;
   right: 12px;
@@ -182,7 +182,7 @@ form {
 .button {
   width: 320px;
   height: 48px;
-  background-color: #0674B8;
+  background-color: #18b3cb;
   color: #fff;
   border-radius: 12px;
   border: none;

@@ -282,7 +282,7 @@ input[type='number']::-webkit-outer-spin-button {
     border: none;
     cursor: pointer;
     font-size: 14px;
-    color: #0674b8;
+    color: #18b3cb;
     position: absolute;
     margin-top: 12px;
     margin-right: 11px;
