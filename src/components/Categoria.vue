@@ -72,4 +72,8 @@ export default {
 .categoria-link-no-underline:hover .category-name {
   color: #007bff;
 }
+
+.row .col-md-2 {
+  margin-bottom: 20px;
+}
 </style>
