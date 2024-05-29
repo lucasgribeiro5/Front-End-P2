@@ -59,6 +59,8 @@
         <div class="Cadastro">
           <div class="aa">
             <router-link to="/Cadastro" class="cc">Cadastre-se</router-link>
+            <br>
+            <router-link to="/LoginColaborador" class="cc">Ârea do Colaborador</router-link>
           </div>
         </div>
       </form>
