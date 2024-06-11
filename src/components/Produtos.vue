@@ -1,5 +1,4 @@
 <template>
-  <!-- PRODUTOS -->
   <div class="produtos pt-32 pb-64">
     <div class="container">
       <div class="titulo-produtos">

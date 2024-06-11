@@ -10,7 +10,7 @@
       <form @submit.prevent="handleLogin">
         <div class="inputcontainer">
           <span style="position: relative; width: 100%;">
-            <input type="text" id="email" name="email" placeholder="Identificação de Usuário" style="padding-left: 38px;" />
+            <input type="text" id="email" name="email" v-model="email" placeholder="Identificação de Usuário" style="padding-left: 38px;" />
             <label
               for="email"
               style="position: absolute; top: 55.4%; left: 7px; transform: translateY(-50%); pointer-events: none; color: #555; transition: 0.3s; font-size: 1em;"
@@ -59,8 +59,6 @@
         <div class="Cadastro">
           <div class="aa">
             <router-link to="/Cadastro" class="cc">Cadastre-se</router-link>
-            <br>
-            <router-link to="/LoginColaborador" class="cc">Ârea do Colaborador</router-link>
           </div>
         </div>
       </form>
@@ -72,6 +70,7 @@
 export default {
   data() {
     return {
+      email: '',
       showPassword: false,
       password: ''
     };
@@ -86,9 +85,19 @@ export default {
         this.password = inputPassword;
       }
     },
-    handleLogin() {
-      alert(`Password: ${this.password}`);
-      
+    async handleLogin() {
+      try {
+        const response = await this.$authService.login(this.email, this.password);
+        if (response.success) {
+          this.$store.commit('setUser', response.user);
+          this.$router.push({ name: 'Home' });
+        } else {
+          alert('Credenciais inválidas');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Ocorreu um erro ao tentar fazer login');
+      }
     }
   }
 };
@@ -100,7 +109,7 @@ html, body, #app {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* Adicione isso para evitar overflow */
+  overflow: hidden;
 }
 
 .container1 {
@@ -108,9 +117,9 @@ html, body, #app {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; /* Alterado para 100vh para garantir que ocupe a altura total da viewport */
+  height: 100vh; 
   background-image: url(../assets/images/fundo1.1.png);
-  background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
+  background-size: cover;
   background-repeat: no-repeat;
 }
 

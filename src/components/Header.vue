@@ -8,7 +8,11 @@
           <img src="../assets/images/logoattt2.png" alt="Logo1" class="Logo"/>
         </a>
         <div class="opcoes display-flex align-items-center gap-32">
-          <div class="display-flex align-items-center gap-8">
+          <div v-if="isAuthenticated" class="display-flex align-items-center gap-8">
+            <p>Bem-vindo, {{ userName }}</p>
+            <button @click="logout">Sair</button>
+          </div>
+          <div v-else class="display-flex align-items-center gap-8">
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -67,31 +71,10 @@
             <router-link to="/carrinho" style="text-decoration: none;" class="category-link"> Carrinho </router-link>
           </div>
           <div class="carrinho display-flex align-items-center gap-8">
-            <!-- <svg
-            >
-              <g>
-                <g>
-                  <path
-                    d="M405.387,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84S440.588,362.612,405.387,362.612z M405.387,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536c14.083,0,25.536,11.453,25.536,25.536S419.47,451.988,405.387,451.988z"
-                  />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <path
-                    d="M507.927,115.875c-3.626-4.641-9.187-7.348-15.079-7.348H118.22l-17.237-72.12c-2.062-8.618-9.768-14.702-18.629-14.702H19.152C8.574,21.704,0,30.278,0,40.856s8.574,19.152,19.152,19.152h48.085l62.244,260.443c2.062,8.625,9.768,14.702,18.629,14.702h298.135c8.804,0,16.477-6.001,18.59-14.543l46.604-188.329C512.849,126.562,511.553,120.516,507.927,115.875z M431.261,296.85H163.227l-35.853-150.019h341.003L431.261,296.85z"
-                  />
-                </g>
-              </g>
-              <g>
-                <g>
-                  <path
-                    d="M173.646,362.612c-35.202,0-63.84,28.639-63.84,63.84s28.639,63.84,63.84,63.84s63.84-28.639,63.84-63.84S208.847,362.612,173.646,362.612z M173.646,451.988c-14.083,0-25.536-11.453-25.536-25.536s11.453-25.536,25.536-25.536s25.536,11.453,25.536,25.536S187.729,451.988,173.646,451.988z"
-                  />
-                </g>
-              </g>
-            </svg> -->
             <router-link to="/FormularioContato" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
+          </div>
+          <div class="carrinho display-flex align-items-center gap-8">
+            <router-link to="/Mensagens" style="text-decoration: none;" class="category-link"> Mensagens </router-link>
           </div>
         </div>
       </div>
@@ -107,15 +90,25 @@
       <a href="/" class="category-link">Eletroportáteis</a>
     </div>
   </nav>
-  <!-- <div class="banner pt-32">
-    <div class="container">
-      <img src="../assets/images/Banner.png" alt="Banner" />
-    </div>
-  </div> -->
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isAuthenticated() {
+      return this.$store.state.isAuthenticated;
+    },
+    userName() {
+      return this.$store.state.userName;
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout');
+      this.$router.push('/login'); 
+    }
+  }
+};
 </script>
 
 <style scoped></style>

@@ -8,7 +8,7 @@
             </div>
             <br>
             <form v-if="selectedOption === '1'" :class="transitioning ? 'fade-out' : 'fade-in'"
-                @submit.prevent="handleSubmit(onSubmit)">
+                @submit.prevent="handleSubmit">
                 <div class="input-form1">
                     <br />
                     <input type="text" placeholder="Nome Completo" v-model="formData.fullName" required />
@@ -24,13 +24,13 @@
                 <div class="input-form1">
                     <br />
                     <input type="tel" placeholder="Celular" v-model="phoneNumber" @input="handlePhoneNumberChange"
-                        maxlength="11" required />
+                        maxlength="14" required />
                     <br />
                 </div>
 
                 <div class="input-form1">
                     <br />
-                    <input type="text" placeholder="CPF" v-model="cpf" @input="handleCpfChange" maxlength="11"
+                    <input type="text" placeholder="CPF" v-model="cpf" @input="handleCpfChange" maxlength="14"
                         required />
                     <br />
                 </div>
@@ -67,32 +67,22 @@
 
 <script setup>
 import { ref } from 'vue';
+import http from "@/api.js";
+import { useRouter } from 'vue-router';
 
 const selectedOption = ref('1');
 const showPassword = ref(false);
 const showConfirmPassword = ref(false);
 const phoneNumber = ref('');
 const cpf = ref('');
-const ra = ref('');
 const transitioning = ref(false);
 
 const formData = ref({
     fullName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    curso: '',
+    confirmPassword: ''
 });
-
-const handleOptionChange = (option) => {
-    if (selectedOption.value !== option) {
-        transitioning.value = true;
-        setTimeout(() => {
-            selectedOption.value = option;
-            transitioning.value = false;
-        }, 400);
-    }
-};
 
 const handleShowPassword = () => {
     showPassword.value = !showPassword.value;
@@ -126,16 +116,28 @@ const handleCpfChange = (e) => {
     cpf.value = formattedCPF;
 };
 
-const handleRaChange = (e) => {
-    const input = e.target.value;
-    const formattedRa = input.slice(0, 7);
-    ra.value = formattedRa;
+const router = useRouter();
+
+const handleSubmit = () => {
+    const post = {
+        email: formData.value.email,
+        password: formData.value.password,
+        fullName: formData.value.fullName,
+        phoneNumber: phoneNumber.value,
+        cpf: cpf.value
+    };
+
+    http.post("/usuarios", post)
+        .then(() => {
+            router.push('/');
+        })
+        .catch(error => {
+            console.error('Error while submitting:', error);
+        });
 };
 
-const onSubmit = () => {
-    console.log(formData.value);
-};
 </script>
+
 
 <style scoped>
 .container2 {

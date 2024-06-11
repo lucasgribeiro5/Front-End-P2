@@ -4,7 +4,7 @@ import CarrinhoView from "../views/CarrinhoView.vue";
 import FormularioContato from "../views/FormularioContrato.vue";
 import Login from "../views/Login.vue";
 import Cadastro from "../views/Cadastro.vue";
-import LoginColaborador from "../views/Logincolaborador.vue";
+import Mensagens from "../views/Mensagens.vue";
 
 
 const router = createRouter({
@@ -36,9 +36,9 @@ const router = createRouter({
       component: Cadastro,
     },
     {
-      path: "/LoginColaborador",
-      name: "LoginColaborador",
-      component: LoginColaborador,
+      path: "/Mensagens",
+      name: "Mensagens",
+      component: Mensagens,
     },
   ],
 });

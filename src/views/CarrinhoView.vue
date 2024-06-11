@@ -63,10 +63,20 @@
                   </g>
                 </g>
               </svg>
+              <span v-if="isAuthenticated">{{ userName }}</span>
+              <router-link v-if="!isAuthenticated" to="/login" style="text-decoration: none;" class="category-link">Entrar/Cadastrar</router-link>
+            </div>
+            <div class="carrinho display-flex align-items-center gap-8">
               <router-link to="/carrinho" style="text-decoration: none;" class="category-link"> Carrinho </router-link>
             </div>
             <div class="carrinho display-flex align-items-center gap-8">
               <router-link to="/FormularioContato" style="text-decoration: none;" class="category-link"> Fale Conosco </router-link>
+            </div>
+            <div class="carrinho display-flex align-items-center gap-8">
+              <router-link to="/Mensagens" style="text-decoration: none;" class="category-link"> Mensagens </router-link>
+            </div>
+            <div class="carrinho display-flex align-items-center gap-8" v-if="isAuthenticated">
+              <button @click="logout">Sair</button>
             </div>
           </div>
         </div>
