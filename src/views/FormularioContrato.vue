@@ -14,19 +14,15 @@
     </section>
 
     <div class="container">
-      <h2 class="fs-3 verdes my-4">Formulário de contato</h2>
+      <h2 class="fs-3 verdes my-4">Formulário de chamado</h2>
       <hr class="hidden-line">
       <form id="form" @submit.prevent="submitForm">
         <div class="container">
-          <div class="row gap-2">
-            <input class="col-6 py-2 border border-2 rounded" type="text" v-model="name" placeholder="Nome" required>
-            <input class="col py-2 border border-2 rounded" type="text" v-model="email" placeholder="E-mail" required>
+          <div class="row mt-2">
+            <input class="col-12 py-2 border border-2 rounded" type="text" v-model="chamado.assunto" placeholder="Assunto" required>
           </div>
           <div class="row mt-2">
-            <input class="col-12 py-2 border border-2 rounded" type="text" v-model="subject" placeholder="Assunto" required>
-          </div>
-          <div class="row mt-2">
-            <input class="col-12 py-2 border border-2 rounded" type="text" v-model="message" placeholder="Mensagem" required>
+            <input class="col-12 py-2 border border-2 rounded" type="text" v-model="chamado.mensagem" placeholder="Mensagem" required>
           </div>
           <p id="result"></p>
         </div>
@@ -88,7 +84,7 @@
           </h2>
           <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              Para cancelar ou modificar um pedido, entre em contato com o nosso atendimento ao cliente o mais rápido possível. Se o pedido ainda não tiver sido processado, podemos fazer as alterações solicitadas. Uma vez que o pedido tenha sido despachado, não será possível modificá-lo ou cancelá-lo.
+              Para cancelar ou modificar um pedido, entre em chamado com o nosso atendimento ao cliente o mais rápido possível. Se o pedido ainda não tiver sido processado, podemos fazer as alterações solicitadas. Uma vez que o pedido tenha sido despachado, não será possível modificá-lo ou cancelá-lo.
             </div>
           </div>
         </div>
@@ -100,9 +96,22 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Header from "../components/Header.vue";
-import Diferenciais from "../components/Diferenciais.vue";
-import Categoria from "../components/Categoria.vue";
-import Produtos from "../components/Produtos.vue";
 import Rodape from "../components/Rodape.vue";
+import https from "@/api.js";
+
+const chamado = ref({
+  "assunto": "",
+  "mensagem": ""
+});
+
+const submitForm = (e) => {
+  if (chamado.value.assunto != "" && chamado.value.mensagem != "") {
+    https.post("/chamados", chamado).then(data => {
+      console.log("Deu bom", data);
+    }).catch((error) => {console.log("Errrror", error)});
+  }
+}
+
 </script>

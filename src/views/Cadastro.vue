@@ -8,7 +8,7 @@
             </div>
             <br>
             <form v-if="selectedOption === '1'" :class="transitioning ? 'fade-out' : 'fade-in'"
-                @submit.prevent="handleSubmit">
+                @submit.prevent="onSubmit">
                 <div class="input-form1">
                     <br />
                     <input type="text" placeholder="Nome Completo" v-model="formData.fullName" required />
@@ -24,13 +24,13 @@
                 <div class="input-form1">
                     <br />
                     <input type="tel" placeholder="Celular" v-model="phoneNumber" @input="handlePhoneNumberChange"
-                        maxlength="14" required />
+                        maxlength="11" required />
                     <br />
                 </div>
 
                 <div class="input-form1">
                     <br />
-                    <input type="text" placeholder="CPF" v-model="cpf" @input="handleCpfChange" maxlength="14"
+                    <input type="text" placeholder="CPF" v-model="cpf" @input="handleCpfChange" maxlength="11"
                         required />
                     <br />
                 </div>
@@ -75,14 +75,26 @@ const showPassword = ref(false);
 const showConfirmPassword = ref(false);
 const phoneNumber = ref('');
 const cpf = ref('');
+const ra = ref('');
 const transitioning = ref(false);
 
 const formData = ref({
     fullName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    curso: '',
 });
+
+const handleOptionChange = (option) => {
+    if (selectedOption.value !== option) {
+        transitioning.value = true;
+        setTimeout(() => {
+            selectedOption.value = option;
+            transitioning.value = false;
+        }, 400);
+    }
+};
 
 const handleShowPassword = () => {
     showPassword.value = !showPassword.value;
@@ -116,39 +128,40 @@ const handleCpfChange = (e) => {
     cpf.value = formattedCPF;
 };
 
-const router = useRouter();
-
-const handleSubmit = () => {
-    const post = {
-        email: formData.value.email,
-        password: formData.value.password,
-        fullName: formData.value.fullName,
-        phoneNumber: phoneNumber.value,
-        cpf: cpf.value
-    };
-
-    http.post("/usuarios", post)
-        .then(() => {
-            router.push('/');
-        })
-        .catch(error => {
-            console.error('Error while submitting:', error);
-        });
+const handleRaChange = (e) => {
+    const input = e.target.value;
+    const formattedRa = input.slice(0, 7);
+    ra.value = formattedRa;
 };
 
-</script>
+const router = useRouter();
 
+const onSubmit = () => {
+    const post = {
+        email: formData.value.email,
+        senha: formData.value.password,
+        nome: formData.value.fullName,
+        celular: phoneNumber.value,
+        cpf: cpf.value,
+        perfil: 0
+    }
+
+    http.post("/usuarios", post).then(data => {
+        router.push('/');
+    });
+};
+</script>
 
 <style scoped>
 .container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background-image: url(../assets/images/fundo1.1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/fundo1.1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .card1 {
